@@ -22,24 +22,6 @@ export default {
         </ul>
 </template>
 <style>
-.dropdown-menu{
-    left:0;
-    display: block;
-    transition: all ease 0.3s;
-    visibility: hidden;
-    opacity:0;
-}
-
-.dropdown-menu:not(.show){
-    z-index: -1;
-}
-
-.dropdown-menu.show{
-    visibility: visible;
-    opacity:1;
-    transform: translateY(0);
-}
-
 .dropdown-menu:before {
     content: "";
     display: inline-block;

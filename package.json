@@ -1,6 +1,6 @@
 {
     "name": "vue3-bootstrap-components",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "Twitter Bootstrap Components for Vue 3",
     "type": "module",
     "main": "src/index.js",

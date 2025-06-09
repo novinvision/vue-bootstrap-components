@@ -1,0 +1,39 @@
+<template>
+  <div
+      :id="name"
+      class="modal">
+    <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen}">
+      <div class="modal-content">
+        <slot/>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import 'bootstrap/js/src/modal.js'
+import {computed} from "vue";
+
+export default {
+  emits: ['opened', 'closed'],
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    fullscreen: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  provide() {
+    return {
+      modalName: computed(() => this.name)
+    }
+  },
+  expose: ['close'],
+  methods: {
+    close() {
+    }
+  }
+};
+</script>

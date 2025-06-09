@@ -1,0 +1,35 @@
+{
+    "name": "vue3-bootstrap-components",
+    "version": "1.0.11",
+    "description": "Twitter Bootstrap Components for Vue 3",
+    "type": "module",
+    "main": "src/index.js",
+    "module": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "NovinVision",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/novinvision/vue-bootstrap-components.git"
+    },
+    "files": [
+        "src/*"
+    ],
+    "keywords": [
+        "vue",
+        "laravel",
+        "inertia",
+        "bootstrap components",
+        "bootstrap"
+    ],
+    "dependencies": {
+        "vue": "^3",
+        "bootstrap": "^5.3.3"
+    },
+    "bugs": {
+        "url": "https://github.com/novinvision/vue-bootstrap-components/issues"
+    },
+    "homepage": "https://github.com/novinvision/vue-bootstrap-components#readme"
+}

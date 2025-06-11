@@ -6,17 +6,14 @@
                     <slot/>
                 </div>
                 <div class="col-auto">
-                    <button @click.prevent="useVfm().close(modalName)" type="button" class="btn-close align-middle"></button>
+                    <button type="button" class="btn-close align-middle"></button>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-import {useVfm} from "vue-final-modal";
-
 export default {
     inject: ['modalName'],
-    methods: {useVfm}
 };
 </script>

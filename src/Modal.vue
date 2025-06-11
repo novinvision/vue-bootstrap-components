@@ -1,6 +1,7 @@
 <template>
   <div
       :id="name"
+      ref="modal"
       class="modal">
     <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen}">
       <div class="modal-content">
@@ -25,14 +26,26 @@ export default {
       default: false,
     },
   },
+  setup(props){
+    const modal = new bootstrap.Modal(this.$refs.modal)
+
+    return {modal};
+  },
   provide() {
     return {
       modalName: computed(() => this.name)
     }
   },
   expose: ['close'],
+  beforeUnmount() {
+    this.modal.hide();
+  },
   methods: {
     close() {
+    }
+  },
+  data(){
+    return {
     }
   }
 };

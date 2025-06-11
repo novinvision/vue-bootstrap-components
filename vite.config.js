@@ -12,7 +12,7 @@ export default defineConfig({
             formats: ['es']
         },
         rollupOptions: {
-            external: ['vue', 'bootstrap'], // اجزای خارجی
+            external: ['vue', 'bootstrap'],
         }
     }
 });

@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import 'bootstrap/js/src/modal.js'
+import Modal from 'bootstrap/js/src/modal.js';
 import {computed} from "vue";
 
 export default {
@@ -27,7 +27,7 @@ export default {
     },
   },
   setup(props){
-    const modal = new bootstrap.Modal(this.$refs.modal)
+    const modal = new Modal(this.$refs.modal)
     console.log(modal);
     return {modal};
   },

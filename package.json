@@ -1,12 +1,12 @@
 {
     "name": "vue3-bootstrap-components",
-    "version": "1.0.20",
+    "version": "1.0.21",
     "description": "Twitter Bootstrap Components for Vue 3",
     "type": "module",
-    "main": "src/index.js",
-    "module": "src/index.js",
+    "main": "./dist/vue3-bootstrap-components.mjs",
+    "module": "./dist/vue3-bootstrap-components.mjs",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "vite build"
     },
     "author": "NovinVision",
     "license": "ISC",
@@ -16,12 +16,10 @@
     },
     "exports": {
         ".": {
-            "import": "./src/index.js"
+            "import": "./dist/vue3-bootstrap-components.mjs"
         }
     },
-    "files": [
-        "src"
-    ],
+    "files": ["dist"],
     "keywords": [
         "vue",
         "laravel",
@@ -30,7 +28,12 @@
         "bootstrap"
     ],
     "dependencies": {
+        "vite": "^5",
         "bootstrap": "^5.3.3"
+    },
+    "peerDependencies": {
+        "vue": "^3",
+        "bootstrap": "^5"
     },
     "bugs": {
         "url": "https://github.com/novinvision/vue-bootstrap-components/issues"

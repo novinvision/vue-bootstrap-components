@@ -1,97 +1,61 @@
-import Accordion from "./Accordion/Accordion.vue";
-import AccordionContent from "./Accordion/AccordionContent.vue";
-import AccordionHeader from "./Accordion/AccordionHeader.vue";
-import AccordionItem from "./Accordion/AccordionItem.vue";
-import Alert from "./Alert.vue";
-import Button from "./Button.vue";
-import ButtonGroup from "./ButtonGroup.vue";
-import Card from "./Card.vue";
-import CardBody from "./CardBody.vue";
-import CardFooter from "./CardFooter.vue";
-import CardHeader from "./CardHeader.vue";
-import CardImgOverly from "./CardImgOverly.vue";
-import Container from "./Container.vue";
-import Dropdown from "./Dropdown.vue";
-import DropdownLi from "./DropdownLi.vue";
-import DropdownMenu from "./DropdownMenu.vue";
-import DropdownMenuItem from "./DropdownMenuItem.vue";
-import DropdownToggle from "./DropdownToggle.vue";
-import DropdownToggleLink from "./DropdownToggleLink.vue";
-import InputGroup from "./InputGroup.vue";
-import InputGroupText from "./InputGroupText.vue";
-import ListGroup from "./ListGroup.vue";
-import ListGroupChildren from "./ListGroupChildren.vue";
-import ListGroupItem from "./ListGroupItem.vue";
-import ListGroupLink from "./ListGroupLink.vue";
-import ListGroupParentItem from "./ListGroupParentItem.vue";
-import Modal from "./Modal.vue";
-import ModalBody from "./ModalBody.vue";
-import ModalButton from "./ModalButton.vue";
-import ModalFooter from "./ModalFooter.vue";
-import ModalHeader from "./ModalHeader.vue";
-import Nav from "./Nav.vue";
-import NavItem from "./NavItem.vue";
-import NavLink from "./NavLink.vue";
-import OffCanvas from "./OffCanvas.vue";
-import OffCanvasBody from "./OffCanvasBody.vue";
-import OffCanvasButton from "./OffCanvasButton.vue";
-import Placeholder from "./Placeholder.vue";
-import ProgressBar from "./ProgressBar.vue";
-import SidebarOffCanvasButton from "./SidebarOffCanvasButton.vue";
-import Spinner from "./Spinner.vue";
-import Pagination from "./Pagination.vue";
-import TabNav from "./TabNav.vue";
-import TabNavItem from "./TabNavItem.vue";
-import TabNavButton from "./TabNavButton.vue";
-import TabPane from "./TabPane.vue";
-import TabContent from "./TabContent.vue";
+// src/index.js
 
-export {
-    TabNav,
-    TabNavItem,
-    TabNavButton,
-    TabPane,
-    TabContent,
-    Accordion,
-    AccordionContent,
-    AccordionHeader,
-    AccordionItem,
-    Alert,
-    Button,
-    ButtonGroup,
-    Card,
-    CardBody,
-    CardFooter,
-    CardHeader,
-    CardImgOverly,
-    Container,
-    Dropdown,
-    DropdownLi,
-    DropdownMenu,
-    DropdownMenuItem,
-    DropdownToggle,
-    DropdownToggleLink,
-    InputGroup,
-    InputGroupText,
-    ListGroup,
-    ListGroupChildren,
-    ListGroupItem,
-    ListGroupLink,
-    ListGroupParentItem,
-    Modal,
-    ModalBody,
-    ModalButton,
-    ModalFooter,
-    ModalHeader,
-    Nav,
-    NavItem,
-    NavLink,
-    OffCanvas,
-    OffCanvasBody,
-    OffCanvasButton,
-    Placeholder,
-    ProgressBar,
-    SidebarOffCanvasButton,
-    Spinner,
-    Pagination
-};
+export { default as Accordion } from './Accordion/Accordion.vue';
+export { default as AccordionContent } from './Accordion/AccordionContent.vue';
+export { default as AccordionHeader } from './Accordion/AccordionHeader.vue';
+export { default as AccordionItem } from './Accordion/AccordionItem.vue';
+
+export { default as Alert } from './Alert.vue';
+export { default as Button } from './Button.vue';
+export { default as ButtonGroup } from './ButtonGroup.vue';
+
+export { default as Card } from './Card.vue';
+export { default as CardBody } from './CardBody.vue';
+export { default as CardFooter } from './CardFooter.vue';
+export { default as CardHeader } from './CardHeader.vue';
+export { default as CardImgOverly } from './CardImgOverly.vue';
+
+export { default as Container } from './Container.vue';
+
+export { default as Dropdown } from './Dropdown.vue';
+export { default as DropdownLi } from './DropdownLi.vue';
+export { default as DropdownMenu } from './DropdownMenu.vue';
+export { default as DropdownMenuItem } from './DropdownMenuItem.vue';
+export { default as DropdownToggle } from './DropdownToggle.vue';
+export { default as DropdownToggleLink } from './DropdownToggleLink.vue';
+
+export { default as InputGroup } from './InputGroup.vue';
+export { default as InputGroupText } from './InputGroupText.vue';
+
+export { default as ListGroup } from './ListGroup.vue';
+export { default as ListGroupChildren } from './ListGroupChildren.vue';
+export { default as ListGroupItem } from './ListGroupItem.vue';
+export { default as ListGroupLink } from './ListGroupLink.vue';
+export { default as ListGroupParentItem } from './ListGroupParentItem.vue';
+
+export { default as Modal } from './Modal.vue';
+export { default as ModalBody } from './ModalBody.vue';
+export { default as ModalButton } from './ModalButton.vue';
+export { default as ModalFooter } from './ModalFooter.vue';
+export { default as ModalHeader } from './ModalHeader.vue';
+
+export { default as Nav } from './Nav.vue';
+export { default as NavItem } from './NavItem.vue';
+export { default as NavLink } from './NavLink.vue';
+
+export { default as OffCanvas } from './OffCanvas.vue';
+export { default as OffCanvasBody } from './OffCanvasBody.vue';
+export { default as OffCanvasButton } from './OffCanvasButton.vue';
+
+export { default as Placeholder } from './Placeholder.vue';
+export { default as ProgressBar } from './ProgressBar.vue';
+
+export { default as SidebarOffCanvasButton } from './SidebarOffCanvasButton.vue';
+export { default as Spinner } from './Spinner.vue';
+export { default as Pagination } from './Pagination.vue';
+
+export { default as TabNav } from './TabNav.vue';
+export { default as TabNavItem } from './TabNavItem.vue';
+export { default as TabNavButton } from './TabNavButton.vue';
+export { default as TabPane } from './TabPane.vue';
+export { default as TabContent } from './TabContent.vue';

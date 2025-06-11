@@ -1,31 +1,27 @@
 <template>
-    <VueFinalModal
-        :modal-id="name"
-        overlay-transition="vfm-fade"
-        content-transition="vfm-slide-right"
-        content-class="offcanvas offcanvas-mobile-menu offcanvas-start show">
-        <slot/>
-    </VueFinalModal>
+  <div
+      class="offcanvas"
+      tabindex="-1" :id="name" :aria-labelledby="name + 'Label'">
+    <slot/>
+  </div>
 </template>
 <script>
-import Button from "./Button.vue";
-import {VueFinalModal} from "vue-final-modal";
+import 'bootstrap/js/src/offcanvas.js';
 
 export default {
-    components: {VueFinalModal, Button},
-    props: {
-        name: {
-            type: String,
-            required: true,
-        },
+  props: {
+    name: {
+      type: String,
+      required: true,
     },
+  },
 };
 </script>
 <style>
-.vfm__content.offcanvas-button{
-    width: 100%;
-    right:0;
-    left:0;
-    margin:0 auto;
+.vfm__content.offcanvas-button {
+  width: 100%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 </style>

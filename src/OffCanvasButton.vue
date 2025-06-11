@@ -1,11 +1,9 @@
 <template>
-    <button type="button" @click.prevent="useVfm().open(name)">
+    <button type="button" data-bs-toggle="offcanvas" :data-bs-target="'#'+name" aria-controls="offcanvasExample">
         <slot/>
     </button>
 </template>
 <script>
-import {useVfm} from "vue-final-modal";
-
 export default {
     components: {},
     props: {
@@ -14,6 +12,5 @@ export default {
             required: true,
         },
     },
-    methods: {useVfm}
 };
 </script>

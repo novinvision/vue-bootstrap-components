@@ -6,7 +6,7 @@
                     <slot/>
                 </div>
                 <div class="col-auto">
-                    <button type="button" class="btn-close align-middle"></button>
+                    <button type="button" data-bs-dismiss="modal" :data-bs-target="modalName" class="btn-close align-middle"></button>
                 </div>
             </div>
         </div>

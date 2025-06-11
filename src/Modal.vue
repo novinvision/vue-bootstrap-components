@@ -28,7 +28,7 @@ export default {
   },
   setup(props){
     const modal = new bootstrap.Modal(this.$refs.modal)
-
+    console.log(modal);
     return {modal};
   },
   provide() {
@@ -42,6 +42,7 @@ export default {
   },
   methods: {
     close() {
+      this.modal.hide();
     }
   },
   data(){

@@ -25,16 +25,17 @@ export default {
       default: false,
     },
   },
-  setup(props){
-    const modal = new Modal(document.getElementById(props.name))
-    return {modal};
-  },
   provide() {
     return {
       // modalName: computed(() => this.name)
     }
   },
   expose: ['close'],
+  mounted() {
+    this.modal = new Modal(document.getElementById(this.name),{
+      backdrop: true,
+    })
+  },
   beforeUnmount() {
     this.modal.hide();
   },
@@ -45,6 +46,7 @@ export default {
   },
   data(){
     return {
+      modal: null,
     }
   }
 };

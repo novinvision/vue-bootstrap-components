@@ -10,8 +10,8 @@
   </div>
 </template>
 <script>
+import 'bootstrap/js/src/util/backdrop.js';
 import Modal from 'bootstrap/js/src/modal.js';
-import {ref} from "vue";
 
 export default {
   emits: ['opened', 'closed'],

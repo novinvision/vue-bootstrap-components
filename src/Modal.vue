@@ -1,7 +1,6 @@
 <template>
   <div
       :id="name"
-      ref="modal"
       class="modal">
     <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen}">
       <div class="modal-content">
@@ -12,6 +11,7 @@
 </template>
 <script>
 import Modal from 'bootstrap/js/src/modal.js';
+import {ref} from "vue";
 
 export default {
   emits: ['opened', 'closed'],
@@ -26,8 +26,7 @@ export default {
     },
   },
   setup(props){
-    const modal = new Modal(this.$refs.modal)
-    console.log(modal);
+    const modal = new Modal(document.getElementById(props.name))
     return {modal};
   },
   provide() {

@@ -3,16 +3,26 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
 export default defineConfig({
-    plugins: [vue()],
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/index.js'),
+            entry: 'src/index.js',
             name: 'Vue3BootstrapComponents',
-            fileName: () => 'vue3-bootstrap-components.mjs',
-            formats: ['es']
+            formats: ['es', 'cjs'],
+            fileName: (format) => `vue3-bootstrap-components.${format}.js`
         },
         rollupOptions: {
-            external: ['vue', 'bootstrap'],
+            external: ['vue'],
+            output: {
+                globals: {
+                    vue: 'Vue'
+                }
+            }
         }
-    }
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src')
+        }
+    },
+    plugins: [vue()]
 });

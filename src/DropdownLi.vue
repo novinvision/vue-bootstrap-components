@@ -1,5 +1,4 @@
 <script>
-import {computed} from "vue";
 
 export default {
     methods:{
@@ -15,14 +14,14 @@ export default {
     expose: ['toggle'],
     provide() {
         return {
-            dropdown: computed(() => this),
+            // dropdown: computed(() => this),
         }
     },
     mounted() {
-        document.addEventListener('click', this.clickOutside);
+        // document.addEventListener('click', this.clickOutside);
     },
     beforeUnmount() {
-        document.removeEventListener('click', this.clickOutside);
+        // document.removeEventListener('click', this.clickOutside);
     },
     data() {
         return {

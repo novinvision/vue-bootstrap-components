@@ -1,5 +1,4 @@
 <script>
-import {inject} from "vue";
 
 export default {
     inject: ['itemID', 'accordionName', 'isActive'],

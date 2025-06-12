@@ -1,5 +1,3 @@
-// src/index.js
-
 export { default as Accordion } from './Accordion/Accordion.vue';
 export { default as AccordionContent } from './Accordion/AccordionContent.vue';
 export { default as AccordionHeader } from './Accordion/AccordionHeader.vue';

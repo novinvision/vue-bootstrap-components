@@ -1,6 +1,4 @@
 <script>
-import {computed} from 'vue'
-
 export default {
     props: {
         name: {
@@ -22,7 +20,7 @@ export default {
     provide() {
         return {
             accordionName: this.name,
-            current: computed(() => this.selectedItem)
+            // current: computed(() => this.selectedItem)
         }
     },
     methods: {

@@ -1,5 +1,4 @@
 <script>
-import {computed, inject} from "vue";
 
 export default {
     props: {
@@ -15,7 +14,7 @@ export default {
             return this.current === this.itemID;
         },
         accordionName() {
-            return inject('accordionName');
+            // return inject('accordionName');
         },
         itemID() {
             return this.accordionName + this.id;
@@ -24,7 +23,7 @@ export default {
     provide() {
         return {
             itemID: this.itemID,
-            isActive: computed(() => this.hasActiveItem)
+            // isActive: computed(() => this.hasActiveItem)
         }
     },
 }

@@ -1,7 +1,6 @@
 <script>
 import 'bootstrap/js/src/util/index.js';
 import 'bootstrap/js/src/dropdown.js';
-import {computed} from "vue";
 
 export default {
     props: {
@@ -11,7 +10,7 @@ export default {
     },
     provide() {
         return {
-            dropdown: computed(() => this),
+            // dropdown: computed(() => this),
         }
     },
     methods: {

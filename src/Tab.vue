@@ -1,6 +1,5 @@
 <script>
 import "bootstrap/js/src/tab.js";
-import {computed} from "vue";
 
 export default {
     props: {
@@ -10,7 +9,7 @@ export default {
     },
     provide() {
         return {
-            dropdown: computed(() => this),
+            // dropdown: computed(() => this),
         }
     },
     methods: {

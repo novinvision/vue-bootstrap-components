@@ -12,7 +12,6 @@
 </template>
 <script>
 import Modal from 'bootstrap/js/src/modal.js';
-import {computed} from "vue";
 
 export default {
   emits: ['opened', 'closed'],
@@ -33,7 +32,7 @@ export default {
   },
   provide() {
     return {
-      modalName: computed(() => this.name)
+      // modalName: computed(() => this.name)
     }
   },
   expose: ['close'],

@@ -16,7 +16,6 @@ export { default as CardImgOverly } from './CardImgOverly.vue';
 export { default as Container } from './Container.vue';
 
 export { default as Dropdown } from './Dropdown.vue';
-export { default as DropdownLi } from './DropdownLi.vue';
 export { default as DropdownMenu } from './DropdownMenu.vue';
 export { default as DropdownMenuItem } from './DropdownMenuItem.vue';
 export { default as DropdownToggle } from './DropdownToggle.vue';

@@ -3,6 +3,10 @@ import 'bootstrap/js/src/util/index.js';
 import 'bootstrap/js/src/dropdown.js';
 
 export default {
+    data() {
+        return {
+        }
+    }
 }
 </script>
 

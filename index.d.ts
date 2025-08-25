@@ -1,58 +1,106 @@
-declare module "vue3-bootstrap-components" {
-    import { DefineComponent } from "vue";
+// index.d.ts
+import { DefineComponent } from 'vue';
 
-    // هر کامپوننت به این شکل تعریف میشه
-    export const Alert: DefineComponent<{}, {}, any>;
-    export const Button: DefineComponent<{}, {}, any>;
-    export const ButtonGroup: DefineComponent<{}, {}, any>;
-    export const Card: DefineComponent<{}, {}, any>;
-    export const CardBody: DefineComponent<{}, {}, any>;
-    export const CardFooter: DefineComponent<{}, {}, any>;
-    export const CardHeader: DefineComponent<{}, {}, any>;
-    export const CardImgOverly: DefineComponent<{}, {}, any>;
+export const Accordion: DefineComponent<{}, {}, any>;
+export const AccordionContent: DefineComponent<{}, {}, any>;
+export const AccordionHeader: DefineComponent<{}, {}, any>;
+export const AccordionItem: DefineComponent<{}, {}, any>;
 
-    export const Container: DefineComponent<{}, {}, any>;
+export const Alert: DefineComponent<{}, {}, any>;
+export const Button: DefineComponent<{}, {}, any>;
+export const ButtonGroup: DefineComponent<{}, {}, any>;
+export const Card: DefineComponent<{}, {}, any>;
+export const CardBody: DefineComponent<{}, {}, any>;
+export const CardFooter: DefineComponent<{}, {}, any>;
+export const CardHeader: DefineComponent<{}, {}, any>;
+export const CardImgOverly: DefineComponent<{}, {}, any>;
+export const Container: DefineComponent<{}, {}, any>;
+export const Dropdown: DefineComponent<{}, {}, any>;
+export const DropdownMenu: DefineComponent<{}, {}, any>;
+export const DropdownMenuItem: DefineComponent<{}, {}, any>;
+export const DropdownToggle: DefineComponent<{}, {}, any>;
+export const DropdownToggleLink: DefineComponent<{}, {}, any>;
+export const InputGroup: DefineComponent<{}, {}, any>;
+export const InputGroupText: DefineComponent<{}, {}, any>;
+export const ListGroup: DefineComponent<{}, {}, any>;
+export const ListGroupChildren: DefineComponent<{}, {}, any>;
+export const ListGroupItem: DefineComponent<{}, {}, any>;
+export const ListGroupLink: DefineComponent<{}, {}, any>;
+export const ListGroupParentItem: DefineComponent<{}, {}, any>;
+export const Modal: DefineComponent<{}, {}, any>;
+export const ModalBody: DefineComponent<{}, {}, any>;
+export const ModalButton: DefineComponent<{}, {}, any>;
+export const ModalFooter: DefineComponent<{}, {}, any>;
+export const ModalHeader: DefineComponent<{}, {}, any>;
+export const Nav: DefineComponent<{}, {}, any>;
+export const NavItem: DefineComponent<{}, {}, any>;
+export const NavLink: DefineComponent<{}, {}, any>;
+export const OffCanvas: DefineComponent<{}, {}, any>;
+export const OffCanvasBody: DefineComponent<{}, {}, any>;
+export const OffCanvasButton: DefineComponent<{}, {}, any>;
+export const OffCanvasHeader: DefineComponent<{}, {}, any>;
+export const Pagination: DefineComponent<{}, {}, any>;
+export const Placeholder: DefineComponent<{}, {}, any>;
+export const ProgressBar: DefineComponent<{}, {}, any>;
+export const SidebarOffCanvasButton: DefineComponent<{}, {}, any>;
+export const Spinner: DefineComponent<{}, {}, any>;
+export const Tab: DefineComponent<{}, {}, any>;
+export const TabContent: DefineComponent<{}, {}, any>;
+export const TabNav: DefineComponent<{}, {}, any>;
+export const TabNavButton: DefineComponent<{}, {}, any>;
+export const TabNavItem: DefineComponent<{}, {}, any>;
+export const TabPane: DefineComponent<{}, {}, any>;
 
-    export const Dropdown: DefineComponent<{}, {}, any>;
-    export const DropdownMenu: DefineComponent<{}, {}, any>;
-    export const DropdownMenuItem: DefineComponent<{}, {}, any>;
-    export const DropdownToggle: DefineComponent<{}, {}, any>;
-    export const DropdownToggleLink: DefineComponent<{}, {}, any>;
+// این قسمت برای اینکه import * as ... هم ساپورت بشه
+declare const Vue3BootstrapComponents: {
+    Accordion: typeof Accordion;
+    AccordionContent: typeof AccordionContent;
+    AccordionHeader: typeof AccordionHeader;
+    AccordionItem: typeof AccordionItem;
+    Alert: typeof Alert;
+    Button: typeof Button;
+    ButtonGroup: typeof ButtonGroup;
+    Card: typeof Card;
+    CardBody: typeof CardBody;
+    CardFooter: typeof CardFooter;
+    CardHeader: typeof CardHeader;
+    CardImgOverly: typeof CardImgOverly;
+    Container: typeof Container;
+    Dropdown: typeof Dropdown;
+    DropdownMenu: typeof DropdownMenu;
+    DropdownMenuItem: typeof DropdownMenuItem;
+    DropdownToggle: typeof DropdownToggle;
+    DropdownToggleLink: typeof DropdownToggleLink;
+    InputGroup: typeof InputGroup;
+    InputGroupText: typeof InputGroupText;
+    ListGroup: typeof ListGroup;
+    ListGroupChildren: typeof ListGroupChildren;
+    ListGroupItem: typeof ListGroupItem;
+    ListGroupLink: typeof ListGroupLink;
+    ListGroupParentItem: typeof ListGroupParentItem;
+    Modal: typeof Modal;
+    ModalBody: typeof ModalBody;
+    ModalButton: typeof ModalButton;
+    ModalFooter: typeof ModalFooter;
+    ModalHeader: typeof ModalHeader;
+    Nav: typeof Nav;
+    NavItem: typeof NavItem;
+    NavLink: typeof NavLink;
+    OffCanvas: typeof OffCanvas;
+    OffCanvasBody: typeof OffCanvasBody;
+    OffCanvasButton: typeof OffCanvasButton;
+    OffCanvasHeader: typeof OffCanvasHeader;
+    Pagination: typeof Pagination;
+    Placeholder: typeof Placeholder;
+    ProgressBar: typeof ProgressBar;
+    SidebarOffCanvasButton: typeof SidebarOffCanvasButton;
+    Spinner: typeof Spinner;
+    Tab: typeof Tab;
+    TabContent: typeof TabContent;
+    TabNav: typeof TabNav;
+    TabNavButton: typeof TabNavButton;
+    TabNavItem: typeof TabNavItem;
+    TabPane: typeof TabPane;
+};
 
-    export const InputGroup: DefineComponent<{}, {}, any>;
-    export const InputGroupText: DefineComponent<{}, {}, any>;
-
-    export const ListGroup: DefineComponent<{}, {}, any>;
-    export const ListGroupChildren: DefineComponent<{}, {}, any>;
-    export const ListGroupItem: DefineComponent<{}, {}, any>;
-    export const ListGroupLink: DefineComponent<{}, {}, any>;
-    export const ListGroupParentItem: DefineComponent<{}, {}, any>;
-
-    export const Modal: DefineComponent<{}, {}, any>;
-    export const ModalBody: DefineComponent<{}, {}, any>;
-    export const ModalButton: DefineComponent<{}, {}, any>;
-    export const ModalFooter: DefineComponent<{}, {}, any>;
-    export const ModalHeader: DefineComponent<{}, {}, any>;
-
-    export const Nav: DefineComponent<{}, {}, any>;
-    export const NavItem: DefineComponent<{}, {}, any>;
-    export const NavLink: DefineComponent<{}, {}, any>;
-
-    export const OffCanvas: DefineComponent<{}, {}, any>;
-    export const OffCanvasBody: DefineComponent<{}, {}, any>;
-    export const OffCanvasButton: DefineComponent<{}, {}, any>;
-
-    export const Pagination: DefineComponent<{}, {}, any>;
-
-    export const Placeholder: DefineComponent<{}, {}, any>;
-    export const ProgressBar: DefineComponent<{}, {}, any>;
-
-    export const SidebarOffCanvasButton: DefineComponent<{}, {}, any>;
-    export const Spinner: DefineComponent<{}, {}, any>;
-
-    export const TabNav: DefineComponent<{}, {}, any>;
-    export const TabNavItem: DefineComponent<{}, {}, any>;
-    export const TabNavButton: DefineComponent<{}, {}, any>;
-    export const TabPane: DefineComponent<{}, {}, any>;
-    export const TabContent: DefineComponent<{}, {}, any>;
-}
+export default Vue3BootstrapComponents;

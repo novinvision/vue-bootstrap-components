@@ -2,7 +2,7 @@
   <div
       :id="name"
       class="modal">
-    <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen, dialogClass}">
+    <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen, [dialogClass]: true}">
       <div class="modal-content">
         <slot/>
       </div>

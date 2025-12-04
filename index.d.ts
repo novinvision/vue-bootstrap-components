@@ -27,9 +27,27 @@ export const ListGroupChildren: DefineComponent<{}, {}, any>;
 export const ListGroupItem: DefineComponent<{}, {}, any>;
 export const ListGroupLink: DefineComponent<{}, {}, any>;
 export const ListGroupParentItem: DefineComponent<{}, {}, any>;
-export const Modal: DefineComponent<{}, {}, any>;
+export const Modal: DefineComponent<{
+    name: {
+        type: String,
+        required: true,
+    },
+    fullscreen: {
+        type: Boolean,
+        default: false,
+    },
+    dialogClass: {
+        type: String,
+        default: false,
+    },
+}, {}, any>;
 export const ModalBody: DefineComponent<{}, {}, any>;
-export const ModalButton: DefineComponent<{}, {}, any>;
+export const ModalButton: DefineComponent<{
+    name: {
+        type: String,
+        required: true,
+    },
+}, {}, any>;
 export const ModalFooter: DefineComponent<{}, {}, any>;
 export const ModalHeader: DefineComponent<{}, {}, any>;
 export const Nav: DefineComponent<{}, {}, any>;

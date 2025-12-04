@@ -2,7 +2,7 @@
   <div
       :id="name"
       class="modal">
-    <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen}">
+    <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen, dialogClass}">
       <div class="modal-content">
         <slot/>
       </div>
@@ -22,6 +22,10 @@ export default {
     },
     fullscreen: {
       type: Boolean,
+      default: false,
+    },
+    dialogClass: {
+      type: String,
       default: false,
     },
   },

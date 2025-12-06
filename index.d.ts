@@ -53,6 +53,24 @@ export const ModalHeader: DefineComponent<{}, {}, any>;
 export const Nav: DefineComponent<{}, {}, any>;
 export const NavItem: DefineComponent<{}, {}, any>;
 export const NavLink: DefineComponent<{}, {}, any>;
+export const Collapse: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    }
+}, {}, any>;
+export const CollapseButton: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    }
+}, {}, any>;
+export const CollapseLink: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    }
+}, {}, any>;
 export const OffCanvas: DefineComponent<{}, {}, any>;
 export const OffCanvasBody: DefineComponent<{}, {}, any>;
 export const OffCanvasButton: DefineComponent<{}, {}, any>;
@@ -96,6 +114,9 @@ declare const Vue3BootstrapComponents: {
     ListGroupItem: typeof ListGroupItem;
     ListGroupLink: typeof ListGroupLink;
     ListGroupParentItem: typeof ListGroupParentItem;
+    Collapse: typeof Collapse;
+    CollapseButton: typeof CollapseButton;
+    CollapseLink: typeof CollapseLink;
     Modal: typeof Modal;
     ModalBody: typeof ModalBody;
     ModalButton: typeof ModalButton;

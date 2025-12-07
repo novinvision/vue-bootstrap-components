@@ -45,6 +45,7 @@ export { default as CollapseButton } from './CollapseButton.vue';
 export { default as CollapseLink } from './CollapseLink.vue';
 
 export { default as OffCanvas } from './OffCanvas.vue';
+export { default as OffCanvasHeader } from './OffCanvasHeader.vue';
 export { default as OffCanvasBody } from './OffCanvasBody.vue';
 export { default as OffCanvasButton } from './OffCanvasButton.vue';
 

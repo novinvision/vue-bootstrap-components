@@ -2,7 +2,7 @@
   <div
       :id="name"
       ref="modal"
-      class="modal">
+      class="modal" :class="{[effect]: true}">
     <div class="modal-dialog modal-dialog-centered" :class="{'modal-fullscreen' : fullscreen, [dialogClass]: true}">
       <div class="modal-content">
         <slot :modal="modal"/>
@@ -11,9 +11,6 @@
   </div>
 </template>
 <script>
-import 'bootstrap/js/src/util/backdrop.js';
-import Modal from 'bootstrap/js/src/modal.js';
-
 export default {
   emits: ['opened', 'closed'],
   props: {
@@ -29,6 +26,10 @@ export default {
       type: String,
       default: false,
     },
+    effect: {
+      type: String,
+      default: 'fade',
+    },
   },
   provide() {
     return {
@@ -36,7 +37,12 @@ export default {
     }
   },
   expose: ['close'],
-  mounted() {
+  async mounted() {
+    if (window && !window.bsModalLoaded) {
+      await import("bootstrap/js/src/modal.js");
+      window.bsModalLoaded = true;
+    }
+
     let _this = this;
     this.modal = new Modal(document.getElementById(this.name),{
       backdrop: true,

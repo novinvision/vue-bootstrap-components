@@ -1,5 +1,5 @@
 <template>
-    <button type="button" data-bs-toggle="offcanvas" :data-bs-target="'#'+name" aria-controls="offcanvasExample">
+    <button type="button" data-bs-toggle="offcanvas" :data-bs-target="'#'+name">
         <slot/>
     </button>
 </template>

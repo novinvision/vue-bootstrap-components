@@ -1,7 +1,5 @@
 <template>
-  <div
-      class="offcanvas"
-      tabindex="-1" :id="name" :aria-labelledby="name + 'Label'">
+  <div class="offcanvas" tabindex="-1" :id="name" :aria-labelledby="name + 'Label'">
     <slot/>
   </div>
 </template>
@@ -14,7 +12,7 @@ export default {
     },
   },
   async mounted() {
-    if(window && !window.bsOffcanvasLoaded){
+    if (window && !window.bsOffcanvasLoaded) {
       await import("bootstrap/js/src/offcanvas.js");
 
       window.bsOffcanvasLoaded = true;

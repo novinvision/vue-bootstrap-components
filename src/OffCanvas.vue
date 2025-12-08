@@ -6,8 +6,6 @@
   </div>
 </template>
 <script>
-import 'bootstrap/js/src/offcanvas.js';
-
 export default {
   props: {
     name: {
@@ -15,13 +13,12 @@ export default {
       required: true,
     },
   },
+  async mounted() {
+    if(window && !window.bsOffcanvasLoaded){
+      await import("bootstrap/js/src/offcanvas.js");
+
+      window.bsOffcanvasLoaded = true;
+    }
+  }
 };
 </script>
-<style>
-.vfm__content.offcanvas-button {
-  width: 100%;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-}
-</style>

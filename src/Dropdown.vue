@@ -1,22 +1,18 @@
 <script>
-import 'bootstrap/js/src/util/index.js';
-import 'bootstrap/js/src/dropdown.js';
-
 export default {
-    data() {
-        return {
-        }
+  async mounted() {
+    if (window && !window.bsDropdownLoaded) {
+      // await import("bootstrap/js/src/util/index.js");
+      await import("bootstrap/js/src/dropdown.js");
+
+      window.bsDropdownLoaded = true;
     }
+  }
 }
 </script>
 
 <template>
-    <div class="dropdown">
-        <slot/>
-    </div>
+  <div class="dropdown">
+    <slot/>
+  </div>
 </template>
-<style>
-.dropdown.dropdown-lg .dropdown-item {
-    --bs-dropdown-item-padding-y: 0.6rem;
-}
-</style>

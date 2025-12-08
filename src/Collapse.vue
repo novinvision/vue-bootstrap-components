@@ -1,11 +1,16 @@
 <script>
-import 'bootstrap/js/dist/collapse.js';
-
 export default {
   props:{
     name: {
       type: String,
       required: true
+    }
+  },
+  async mounted() {
+    if (window && !window.bsCollapseLoaded) {
+      await import("bootstrap/js/dist/collapse.js");
+
+      window.bsCollapseLoaded = true;
     }
   }
 }

@@ -1,43 +1,55 @@
 {
-    "name": "vue3-bootstrap-components",
-    "version": "1.0.51",
-    "description": "Twitter Bootstrap Components for Vue 3",
-    "type": "module",
-    "types": "./index.d.ts",
-    "main": "./dist/vue3-bootstrap-components.cjs.js",
-    "module": "./dist/vue3-bootstrap-components.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/vue3-bootstrap-components.es.js",
-            "require": "./dist/vue3-bootstrap-components.cjs.js"
-        },
-        "./dist/*.css": {
-            "import": "./dist/vue3-bootstrap-components.css"
-        }
+  "name": "vue3-bootstrap-components",
+  "version": "1.0.51",
+  "description": "Twitter Bootstrap Components for Vue 3",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     },
-    "files": ["dist", "src", "index.d.ts"],
-    "scripts": {
-        "build": "vite build"
-    },
-    "keywords": ["vue", "laravel", "inertia", "bootstrap components", "bootstrap"],
-    "author": "NovinVision",
-    "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/novinvision/vue-bootstrap-components.git"
-    },
-    "homepage": "https://github.com/novinvision/vue-bootstrap-components#readme",
-    "peerDependencies": {
-        "vue": "^3.0.0"
-    },
-    "devDependencies": {
-        "vite": "^6.3.5",
-        "@vitejs/plugin-vue": "^5.2.4"
-    },
-    "dependencies": {
-        "bootstrap": "^5.3.3"
-    },
-    "bugs": {
-        "url": "https://github.com/novinvision/vue-bootstrap-components/issues"
+    "./components/*": {
+      "import": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
     }
+  },
+  "files": [
+    "dist",
+    "src",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "keywords": [
+    "vue",
+    "laravel",
+    "inertia",
+    "bootstrap components",
+    "bootstrap"
+  ],
+  "author": "NovinVision",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novinvision/vue-bootstrap-components.git"
+  },
+  "homepage": "https://github.com/novinvision/vue-bootstrap-components#readme",
+  "peerDependencies": {
+    "bootstrap": "^5.3.3",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "bugs": {
+    "url": "https://github.com/novinvision/vue-bootstrap-components/issues"
+  }
 }

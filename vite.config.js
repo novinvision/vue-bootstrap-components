@@ -1,28 +1,20 @@
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import path from 'path';
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
+    plugins: [
+        vue(),
+        dts()
+    ],
     build: {
         lib: {
-            entry: 'src/index.js',
+            entry: 'src/index.ts',
             name: 'Vue3BootstrapComponents',
-            formats: ['es', 'cjs'],
-            fileName: (format) => `vue3-bootstrap-components.${format}.js`
+            fileName: 'index'
         },
         rollupOptions: {
-            external: ['vue'],
-            output: {
-                globals: {
-                    vue: 'Vue'
-                }
-            }
+            external: ['vue', 'bootstrap']
         }
-    },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src')
-        }
-    },
-    plugins: [vue()]
-});
+    }
+})

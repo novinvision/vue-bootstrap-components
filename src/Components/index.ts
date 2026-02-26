@@ -4,9 +4,7 @@ export { OffCanvasBody } from './OffCanvas';
 
 export { Dropdown } from './Dropdown';
 export { DropdownMenu } from './Dropdown';
-export { DropdownMenuItem } from './Dropdown';
 export { DropdownToggle } from './Dropdown';
-export { DropdownToggleLink } from './Dropdown';
 
 export { Modal } from './Modal';
 export { ModalBody } from './Modal';

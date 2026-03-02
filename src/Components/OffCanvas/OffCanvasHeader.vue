@@ -1,6 +1,6 @@
 <template>
   <div class="offcanvas-header">
-    <div class="offcanvas-title" :id="name+'Label'">
+    <div class="offcanvas-title col me-3" :id="name+'Label'">
       <slot/>
     </div>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

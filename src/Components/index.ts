@@ -1,6 +1,7 @@
 export { OffCanvas } from './OffCanvas';
 export { OffCanvasHeader } from './OffCanvas';
 export { OffCanvasBody } from './OffCanvas';
+export { OffCanvasButton } from './OffCanvas';
 
 export { Dropdown } from './Dropdown';
 export { DropdownMenu } from './Dropdown';

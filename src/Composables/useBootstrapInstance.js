@@ -7,13 +7,13 @@ export function useBootstrapInstance(refEl, BootstrapClass, options = {}) {
         instance = BootstrapClass.getOrCreateInstance(refEl.value, options)
 
         if(window){
-            document.addEventListener('inertia:start', closeEl)
+            document?.addEventListener('inertia:start', closeEl)
         }
     })
 
     onBeforeUnmount(() => {
         if (window) {
-            document.removeEventListener('inertia:start', closeEl)
+            document?.removeEventListener('inertia:start', closeEl)
         }
 
         disposeEl()

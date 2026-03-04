@@ -34,19 +34,19 @@ const emitShow = (event) => emit('show', event)
 const emitShown = (event) => emit('shown', event)
 
 onMounted(() => {
-  el.value.addEventListener('hide.bs.offcanvas', emitHide)
-  el.value.addEventListener('hidden.bs.offcanvas', emitHidden)
-  el.value.addEventListener('hidePrevented.bs.offcanvas', emitHidePrevented)
-  el.value.addEventListener('show.bs.offcanvas', emitShow)
-  el.value.addEventListener('shown.bs.offcanvas', emitShown)
+  el.value?.addEventListener('hide.bs.offcanvas', emitHide)
+  el.value?.addEventListener('hidden.bs.offcanvas', emitHidden)
+  el.value?.addEventListener('hidePrevented.bs.offcanvas', emitHidePrevented)
+  el.value?.addEventListener('show.bs.offcanvas', emitShow)
+  el.value?.addEventListener('shown.bs.offcanvas', emitShown)
 })
 
 onBeforeUnmount(() => {
-  el.value.removeEventListener('hide.bs.offcanvas', emitHide)
-  el.value.removeEventListener('hidden.bs.offcanvas', emitHidden)
-  el.value.removeEventListener('hidePrevented.bs.offcanvas', emitHidePrevented)
-  el.value.removeEventListener('show.bs.offcanvas', emitShow)
-  el.value.removeEventListener('shown.bs.offcanvas', emitShown)
+  el.value?.removeEventListener('hide.bs.offcanvas', emitHide)
+  el.value?.removeEventListener('hidden.bs.offcanvas', emitHidden)
+  el.value?.removeEventListener('hidePrevented.bs.offcanvas', emitHidePrevented)
+  el.value?.removeEventListener('show.bs.offcanvas', emitShow)
+  el.value?.removeEventListener('shown.bs.offcanvas', emitShown)
 })
 
 </script>

@@ -34,17 +34,17 @@ const emitShow = (event) => emit('show', event)
 const emitShown = (event) => emit('shown', event)
 
 onMounted(() => {
-  el.value.addEventListener('hide.bs.collapse', emitHide)
-  el.value.addEventListener('hidden.bs.collapse', emitHidden)
-  el.value.addEventListener('show.bs.collapse', emitShow)
-  el.value.addEventListener('shown.bs.collapse', emitShown)
+  el.value?.addEventListener('hide.bs.collapse', emitHide)
+  el.value?.addEventListener('hidden.bs.collapse', emitHidden)
+  el.value?.addEventListener('show.bs.collapse', emitShow)
+  el.value?.addEventListener('shown.bs.collapse', emitShown)
 })
 
 onBeforeUnmount(() => {
-  el.value.removeEventListener('hide.bs.collapse', emitHide)
-  el.value.removeEventListener('hidden.bs.collapse', emitHidden)
-  el.value.removeEventListener('show.bs.collapse', emitShow)
-  el.value.removeEventListener('shown.bs.collapse', emitShown)
+  el.value?.removeEventListener('hide.bs.collapse', emitHide)
+  el.value?.removeEventListener('hidden.bs.collapse', emitHidden)
+  el.value?.removeEventListener('show.bs.collapse', emitShow)
+  el.value?.removeEventListener('shown.bs.collapse', emitShown)
 })
 
 </script>

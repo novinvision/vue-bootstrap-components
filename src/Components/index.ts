@@ -28,6 +28,8 @@ export { TabButton } from './Tab';
 export { TabContent } from './Tab';
 export { TabPane } from './Tab';
 
+export { InputGroup } from './Form';
+export { InputGroupText } from './Form';
 
 export { Card } from './Card';
 export { CardImgOverly } from './Card';

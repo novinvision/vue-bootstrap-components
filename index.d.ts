@@ -23,10 +23,7 @@ export const DropdownToggleLink: DefineComponent<{}, {}, any>;
 export const InputGroup: DefineComponent<{}, {}, any>;
 export const InputGroupText: DefineComponent<{}, {}, any>;
 export const ListGroup: DefineComponent<{}, {}, any>;
-export const ListGroupChildren: DefineComponent<{}, {}, any>;
 export const ListGroupItem: DefineComponent<{}, {}, any>;
-export const ListGroupLink: DefineComponent<{}, {}, any>;
-export const ListGroupParentItem: DefineComponent<{}, {}, any>;
 export const Modal: DefineComponent<{
     name: {
         type: String,
@@ -118,10 +115,7 @@ declare const Vue3BootstrapComponents: {
     InputGroup: typeof InputGroup;
     InputGroupText: typeof InputGroupText;
     ListGroup: typeof ListGroup;
-    ListGroupChildren: typeof ListGroupChildren;
     ListGroupItem: typeof ListGroupItem;
-    ListGroupLink: typeof ListGroupLink;
-    ListGroupParentItem: typeof ListGroupParentItem;
     Collapse: typeof Collapse;
     CollapseButton: typeof CollapseButton;
     CollapseLink: typeof CollapseLink;

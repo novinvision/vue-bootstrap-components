@@ -49,6 +49,8 @@ export const ModalButton: DefineComponent<{
     },
 }, {}, any>;
 export const ModalFooter: DefineComponent<{}, {}, any>;
+export const ModalDialog: DefineComponent<{}, {}, any>;
+export const ModalContent: DefineComponent<{}, {}, any>;
 export const ModalDismiss: DefineComponent<{}, {}, any>;
 export const ModalHeader: DefineComponent<{
     showClose: {
@@ -127,6 +129,8 @@ declare const Vue3BootstrapComponents: {
     ModalBody: typeof ModalBody;
     ModalButton: typeof ModalButton;
     ModalFooter: typeof ModalFooter;
+    ModalContent: typeof ModalContent;
+    ModalDialog: typeof ModalDialog;
     ModalHeader: typeof ModalHeader;
     ModalDismiss: typeof ModalDismiss;
     Nav: typeof Nav;

@@ -32,7 +32,6 @@ const emitClosed = (event) => emit('closed', event)
 defineExpose({show, hide})
 
 onMounted(() => {
-  console.log(el)
   el.value.addEventListener('hidden.bs.modal', emitClosed)
   el.value.addEventListener('shown.bs.modal', emitOpened)
 })

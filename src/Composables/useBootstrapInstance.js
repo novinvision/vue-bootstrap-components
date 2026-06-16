@@ -26,9 +26,11 @@ export function useBootstrapInstance(refEl, BootstrapClass, options = {}) {
         }
     }
 
-    const closeEl = function () {
-        if (instance && typeof instance.hide === "function") {
-            instance.hide()
+    const closeEl = async function (e) {
+        const method = e?.detail?.visit?.method ?? null;
+        if ((!method || method === 'get') && instance && typeof instance.hide === "function") {
+            await instance.hide()
+            document?.querySelectorAll('.modal-backdrop')?.forEach(item => item.remove())
         }
     }
 

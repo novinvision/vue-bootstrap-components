@@ -5,6 +5,7 @@ import ModalContent from './ModalContent.vue'
 import ModalDialog from './ModalDialog.vue'
 import ModalFooter from './ModalFooter.vue'
 import ModalHeader from './ModalHeader.vue'
+import ModalDismiss from './ModalDismiss.vue'
 
-export { Modal, ModalHeader, ModalBody, ModalButton, ModalContent, ModalDialog, ModalFooter }
+export { Modal, ModalHeader, ModalBody, ModalButton, ModalContent, ModalDialog, ModalFooter, ModalDismiss }
 export default Modal

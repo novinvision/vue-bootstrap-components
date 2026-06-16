@@ -6,13 +6,17 @@ import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
 const props = defineProps({
   name: {
     type: String,
-    default: 'modalExample',
+    required: true,
+  },
+  effect: {
+    type: String,
+    default: 'fade',
   }
 })
 
 const emit = defineEmits([
-    'opened',
-    'closed',
+  'opened',
+  'closed',
 ])
 
 const el = ref(null)
@@ -28,6 +32,7 @@ const emitClosed = (event) => emit('closed', event)
 defineExpose({show, hide})
 
 onMounted(() => {
+  console.log(el)
   el.value.addEventListener('hidden.bs.modal', emitClosed)
   el.value.addEventListener('shown.bs.modal', emitOpened)
 })
@@ -43,7 +48,7 @@ provide({
 
 </script>
 <template>
-  <div :id="name" ref="modal" class="modal">
+  <div :id="name" ref="el" :class="['modal', effect]">
     <slot/>
   </div>
 </template>

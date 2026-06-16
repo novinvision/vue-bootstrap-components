@@ -49,7 +49,13 @@ export const ModalButton: DefineComponent<{
     },
 }, {}, any>;
 export const ModalFooter: DefineComponent<{}, {}, any>;
-export const ModalHeader: DefineComponent<{}, {}, any>;
+export const ModalDismiss: DefineComponent<{}, {}, any>;
+export const ModalHeader: DefineComponent<{
+    showClose: {
+        type: Boolean,
+        default: true
+    }
+}, {}, any>;
 export const Nav: DefineComponent<{}, {}, any>;
 export const NavItem: DefineComponent<{}, {}, any>;
 export const NavLink: DefineComponent<{}, {}, any>;
@@ -122,6 +128,7 @@ declare const Vue3BootstrapComponents: {
     ModalButton: typeof ModalButton;
     ModalFooter: typeof ModalFooter;
     ModalHeader: typeof ModalHeader;
+    ModalDismiss: typeof ModalDismiss;
     Nav: typeof Nav;
     NavItem: typeof NavItem;
     NavLink: typeof NavLink;

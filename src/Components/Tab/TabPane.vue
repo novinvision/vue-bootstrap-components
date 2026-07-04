@@ -3,7 +3,7 @@ export default {
   props: {
     name: {
       type: String,
-      default: 'tab1'
+      required: true
     },
     animation: {
       type: Number,

@@ -102,8 +102,22 @@ export const TabButton: DefineComponent<{
         required: true
     }
 }, {}, any>;
-export const TabNav: DefineComponent<{}, {}, any>;
-export const TabPane: DefineComponent<{}, {}, any>;
+export const TabNav: DefineComponent<{
+    name: {
+        type: String,
+        default: 'nav'
+    },
+}, {}, any>;
+export const TabPane: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    },
+    animation: {
+        type: Number,
+        default: 'fade',
+    }
+}, {}, any>;
 
 // این قسمت برای اینکه import * as ... هم ساپورت بشه
 declare const Vue3BootstrapComponents: {

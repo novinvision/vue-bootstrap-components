@@ -22,7 +22,7 @@ const emit = defineEmits([
 
 
 provide({
-  'tabName': props.value.name,
+  'tabName': props.value?.name || 'tab',
 })
 
 </script>

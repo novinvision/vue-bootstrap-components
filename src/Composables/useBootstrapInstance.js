@@ -6,13 +6,13 @@ export function useBootstrapInstance(refEl, BootstrapClass, options = {}) {
     onMounted(() => {
         instance = BootstrapClass.getOrCreateInstance(refEl.value, options)
 
-        if(window){
+        if (typeof window !== 'undefined') {
             document?.addEventListener('inertia:start', closeEl)
         }
     })
 
     onBeforeUnmount(() => {
-        if (window) {
+        if (typeof window !== 'undefined') {
             document?.removeEventListener('inertia:start', closeEl)
         }
 

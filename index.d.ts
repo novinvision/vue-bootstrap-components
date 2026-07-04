@@ -103,7 +103,6 @@ export const TabButton: DefineComponent<{
     }
 }, {}, any>;
 export const TabNav: DefineComponent<{}, {}, any>;
-export const TabNavButton: DefineComponent<{}, {}, any>;
 export const TabPane: DefineComponent<{}, {}, any>;
 
 // این قسمت برای اینکه import * as ... هم ساپورت بشه
@@ -156,7 +155,6 @@ declare const Vue3BootstrapComponents: {
     TabContent: typeof TabContent;
     TabButton: typeof TabButton;
     TabNav: typeof TabNav;
-    TabNavButton: typeof TabNavButton;
     TabPane: typeof TabPane;
 };
 

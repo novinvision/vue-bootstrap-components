@@ -3,7 +3,7 @@ export default {
   props: {
     name: {
       type: String,
-      default: 'myTab'
+      required: true
     }
   },
   inject: ['tabName'],

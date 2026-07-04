@@ -5,7 +5,7 @@ import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
 const props = defineProps({
   name: {
     type: String,
-    default: 'tabExample'
+    required: true
   }
 })
 

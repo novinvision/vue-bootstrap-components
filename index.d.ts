@@ -84,11 +84,26 @@ export const Placeholder: DefineComponent<{}, {}, any>;
 export const ProgressBar: DefineComponent<{}, {}, any>;
 export const SidebarOffCanvasButton: DefineComponent<{}, {}, any>;
 export const Spinner: DefineComponent<{}, {}, any>;
-export const Tab: DefineComponent<{}, {}, any>;
-export const TabContent: DefineComponent<{}, {}, any>;
+export const Tab: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    }
+}, {}, any>;
+export const TabContent: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    }
+}, {}, any>;
+export const TabButton: DefineComponent<{
+    name: {
+        type: String,
+        required: true
+    }
+}, {}, any>;
 export const TabNav: DefineComponent<{}, {}, any>;
 export const TabNavButton: DefineComponent<{}, {}, any>;
-export const TabNavItem: DefineComponent<{}, {}, any>;
 export const TabPane: DefineComponent<{}, {}, any>;
 
 // این قسمت برای اینکه import * as ... هم ساپورت بشه
@@ -139,9 +154,9 @@ declare const Vue3BootstrapComponents: {
     Spinner: typeof Spinner;
     Tab: typeof Tab;
     TabContent: typeof TabContent;
+    TabButton: typeof TabButton;
     TabNav: typeof TabNav;
     TabNavButton: typeof TabNavButton;
-    TabNavItem: typeof TabNavItem;
     TabPane: typeof TabPane;
 };
 

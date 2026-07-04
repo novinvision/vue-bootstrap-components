@@ -27,6 +27,7 @@ export { AccordionCollapse } from './Accordion';
 export { Tab } from './Tab';
 export { TabButton } from './Tab';
 export { TabContent } from './Tab';
+export { TabNav } from './Tab';
 export { TabPane } from './Tab';
 
 export { InputGroup } from './Form';
@@ -44,5 +45,7 @@ export { CardImgOverly } from './Card';
 export { CardFooter } from './Card';
 export { CardHeader } from './Card';
 export { CardBody } from './Card';
+
+export { Spinner } from './Spinner';
 
 

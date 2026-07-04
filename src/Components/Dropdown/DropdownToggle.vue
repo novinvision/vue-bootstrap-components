@@ -1,6 +1,5 @@
 <script setup>
 import { ref, defineExpose, defineProps } from 'vue'
-import Dropdown from 'bootstrap/js/src/dropdown'
 import { useBootstrapInstance } from '../../Composables/useBootstrapInstance'
 
 const props = defineProps({
@@ -8,7 +7,7 @@ const props = defineProps({
 
 const el = ref(null)
 
-const { getInstance } = useBootstrapInstance(el, Dropdown)
+const { getInstance } = useBootstrapInstance(el, () => import('bootstrap/js/src/dropdown').then(m => m.default))
 
 const show = () => getInstance()?.show()
 const hide = () => getInstance()?.hide()

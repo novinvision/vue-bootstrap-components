@@ -1,6 +1,5 @@
 <script setup>
 import {ref, defineExpose, defineProps, defineEmits, onMounted, onBeforeUnmount, provide} from 'vue'
-import Modal from 'bootstrap/js/dist/modal'
 import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
 
 const props = defineProps({
@@ -21,7 +20,7 @@ const emit = defineEmits([
 
 const el = ref(null)
 
-const {getInstance} = useBootstrapInstance(el, Modal)
+const {getInstance} = useBootstrapInstance(el, () => import('bootstrap/js/dist/modal').then(m => m.default))
 
 const show = () => getInstance()?.show()
 const hide = () => getInstance()?.hide()

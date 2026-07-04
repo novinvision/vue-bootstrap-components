@@ -1,6 +1,5 @@
 <script setup>
 import {ref, defineExpose, defineEmits, onMounted, onBeforeUnmount} from 'vue'
-import Offcanvas from 'bootstrap/js/dist/offcanvas'
 import { useBootstrapInstance } from '../../Composables/useBootstrapInstance'
 
 const emit = defineEmits([
@@ -20,7 +19,7 @@ const props = defineProps({
 
 const el = ref(null)
 
-const { getInstance } = useBootstrapInstance(el, Offcanvas)
+const { getInstance } = useBootstrapInstance(el, () => import('bootstrap/js/dist/offcanvas').then(m => m.default))
 
 const show = () => getInstance()?.show()
 const hide = () => getInstance()?.hide()

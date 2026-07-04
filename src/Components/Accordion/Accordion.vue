@@ -1,6 +1,5 @@
 <script setup>
 import {ref, defineExpose, defineEmits, defineProps, onMounted, onBeforeUnmount, provide} from 'vue'
-import Collapse from 'bootstrap/js/src/collapse'
 import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
 
 const props = defineProps({
@@ -12,7 +11,7 @@ const props = defineProps({
 
 const el = ref(null)
 
-const {getInstance} = useBootstrapInstance(el, Collapse)
+const {getInstance} = useBootstrapInstance(el, () => import('bootstrap/js/src/collapse').then(m => m.default))
 
 const show = () => getInstance()?.show()
 const hide = () => getInstance()?.hide()

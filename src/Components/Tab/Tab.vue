@@ -1,6 +1,5 @@
 <script setup>
 import {ref, defineEmits, defineProps, provide} from 'vue'
-import Tab from 'bootstrap/js/src/tab'
 import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
 
 const props = defineProps({
@@ -12,7 +11,7 @@ const props = defineProps({
 
 const el = ref(null)
 
-const {getInstance} = useBootstrapInstance(el, Tab)
+const {getInstance} = useBootstrapInstance(el, () => import('bootstrap/js/src/tab').then(m => m.default))
 
 const emit = defineEmits([
   'hide',

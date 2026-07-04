@@ -17,6 +17,7 @@ export { ModalHeader } from './Modal';
 
 export { Collapse } from './Collapse';
 export { CollapseButton } from './Collapse';
+export { CollapseLink } from './Collapse';
 
 export { Accordion } from './Accordion';
 export { AccordionButton } from './Accordion';

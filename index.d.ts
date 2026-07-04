@@ -17,7 +17,6 @@ export const CardImgOverly: DefineComponent<{}, {}, any>;
 export const Container: DefineComponent<{}, {}, any>;
 export const Dropdown: DefineComponent<{}, {}, any>;
 export const DropdownMenu: DefineComponent<{}, {}, any>;
-export const DropdownMenuItem: DefineComponent<{}, {}, any>;
 export const DropdownToggle: DefineComponent<{}, {}, any>;
 export const DropdownToggleLink: DefineComponent<{}, {}, any>;
 export const InputGroup: DefineComponent<{}, {}, any>;
@@ -109,7 +108,6 @@ declare const Vue3BootstrapComponents: {
     Container: typeof Container;
     Dropdown: typeof Dropdown;
     DropdownMenu: typeof DropdownMenu;
-    DropdownMenuItem: typeof DropdownMenuItem;
     DropdownToggle: typeof DropdownToggle;
     DropdownToggleLink: typeof DropdownToggleLink;
     InputGroup: typeof InputGroup;

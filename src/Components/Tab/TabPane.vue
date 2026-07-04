@@ -13,10 +13,10 @@ export default {
   inject: ['tabName'],
   computed: {
     tabPaneName() {
-      return (this.tabName || this.name) + '-pane'
+      return  this.tabName + '-' + this.name + '-pane';
     },
     tabBtnName() {
-      return (this.tabName || this.name) + '-btn';
+      return this.tabName + '-' + this.name + '-btn';
     },
   }
 }

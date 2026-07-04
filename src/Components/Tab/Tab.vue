@@ -21,10 +21,7 @@ const emit = defineEmits([
 ])
 
 
-provide({
-  'tabName': props.value?.name || 'tab',
-})
-
+provide('tabName', props.name || 'tab')
 </script>
 <template>
   <div :id="name" class="bs-tab-area">

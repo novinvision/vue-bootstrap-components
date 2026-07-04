@@ -45,11 +45,11 @@ onBeforeUnmount(() => {
 
 const tabName = inject('tabName')
 const tabBtnName = computed(() => {
-  return (tabName || props.value.name) + '-btn';
+  return (tabName) + '-' + props.name + '-btn';
 })
 
 const tabPaneName = computed(() => {
-  return (tabName || props.value.name) + '-pane';
+  return (tabName) + '-' + props.name + '-pane';
 })
 
 </script>
@@ -62,5 +62,6 @@ const tabPaneName = computed(() => {
       type="button"
       role="tab"
       ref="el">
+    <slot />
   </button>
 </template>

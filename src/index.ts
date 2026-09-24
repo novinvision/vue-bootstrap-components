@@ -1,4 +1,6 @@
 export * from './Components'
+import './bsToast.d.ts'
+
 export { default as OffCanvas } from './Components/OffCanvas'
 export { default as Accordion } from './Components/Accordion'
 export { default as Alert } from './Components/Alert'
@@ -8,3 +10,5 @@ export { default as Spinner } from './Components/Spinner'
 export { default as Dropdown } from './Components/Dropdown'
 export { default as Modal } from './Components/Modal'
 export { default as Tab } from './Components/Tab'
+
+export { default as BsToastPlugin, useBsToast } from './plugin'

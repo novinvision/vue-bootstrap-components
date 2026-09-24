@@ -48,4 +48,4 @@ export { CardBody } from './Card';
 
 export { Spinner } from './Spinner';
 
-
+export { Toast, ToastContainer } from './Toast';

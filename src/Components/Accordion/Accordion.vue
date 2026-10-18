@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
 })
 
 provide({
-  'accordionName': props.value.name,
+  'accordionName': props.name,
 })
 
 </script>

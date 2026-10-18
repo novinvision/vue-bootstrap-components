@@ -2,8 +2,8 @@
 import { DefineComponent } from 'vue';
 
 export const Accordion: DefineComponent<{}, {}, any>;
-export const AccordionContent: DefineComponent<{}, {}, any>;
-export const AccordionHeader: DefineComponent<{}, {}, any>;
+export const AccordionButton: DefineComponent<{}, {}, any>;
+export const AccordionCollapse: DefineComponent<{}, {}, any>;
 export const AccordionItem: DefineComponent<{}, {}, any>;
 
 export const Alert: DefineComponent<{}, {}, any>;
@@ -122,8 +122,8 @@ export const TabPane: DefineComponent<{
 // این قسمت برای اینکه import * as ... هم ساپورت بشه
 declare const Vue3BootstrapComponents: {
     Accordion: typeof Accordion;
-    AccordionContent: typeof AccordionContent;
-    AccordionHeader: typeof AccordionHeader;
+    AccordionButton: typeof AccordionButton;
+    AccordionCollapse: typeof AccordionCollapse;
     AccordionItem: typeof AccordionItem;
     Alert: typeof Alert;
     Button: typeof Button;

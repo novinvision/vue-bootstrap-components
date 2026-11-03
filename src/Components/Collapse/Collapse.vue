@@ -1,54 +1,63 @@
-<script setup>
-import {ref, defineExpose, defineEmits, defineProps, onMounted, onBeforeUnmount} from 'vue'
-import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
+<script setup lang="ts">
+import { provide, ref } from 'vue'
+import { useBootstrapPlugin } from '../../core/useBootstrapPlugin'
+import { useOverlayControl } from '../../core/useOverlayControl'
+import { CollapseKey } from '../../core/keys'
+import type { BsEvent } from '../../core/types'
 
-const props = defineProps({
-  name: {
-    type: String,
-    default: 'collapseExample'
+defineOptions({ name: 'Collapse' })
+
+const props = withDefaults(defineProps<{
+  /** Id of the element; also lets `useOverlay(name)` and `CollapseTrigger` find it. */
+  name?: string
+  /** Open state (`v-model`). */
+  modelValue?: boolean
+  /** Bootstrap option `parent`: CSS selector of a container; opening this collapse closes the open ones inside it. */
+  parent?: string
+  /** Collapse the inline size instead of the block size (`.collapse-horizontal`); give the child a fixed `width`. */
+  horizontal?: boolean
+}>(), { modelValue: false, horizontal: false })
+
+const emit = defineEmits<{
+  /** `show.bs.collapse` — cancelable. */
+  (e: 'show', event: BsEvent): void
+  (e: 'shown', event: BsEvent): void
+  /** `hide.bs.collapse` — cancelable. */
+  (e: 'hide', event: BsEvent): void
+  (e: 'hidden', event: BsEvent): void
+  (e: 'update:modelValue', open: boolean): void
+}>()
+
+const el = ref<HTMLElement | null>(null)
+// Rendered open on first paint; Bootstrap owns the `show` class afterwards.
+const initiallyOpen = props.modelValue
+
+let control!: ReturnType<typeof useOverlayControl>
+
+const plugin = useBootstrapPlugin({
+  plugin: 'collapse',
+  el,
+  config: () => ({ parent: props.parent }),
+  events: ['show', 'shown', 'hide', 'hidden'],
+  emit: (name, event) => {
+    emit(name as 'show', event)
+    control.sync(name)
   }
 })
 
-const el = ref(null)
-
-const {getInstance} = useBootstrapInstance(el, () => import('bootstrap/js/src/collapse').then(m => m.default))
-
-const show = () => getInstance()?.show()
-const hide = () => getInstance()?.hide()
-const toggle = () => getInstance()?.toggle()
-
-defineExpose({show, hide, toggle})
-
-
-const emit = defineEmits([
-  'hide',
-  'hidden',
-  'show',
-  'shown',
-])
-
-const emitHide = (event) => emit('hide', event)
-const emitHidden = (event) => emit('hidden', event)
-const emitShow = (event) => emit('show', event)
-const emitShown = (event) => emit('shown', event)
-
-onMounted(() => {
-  el.value?.addEventListener('hide.bs.collapse', emitHide)
-  el.value?.addEventListener('hidden.bs.collapse', emitHidden)
-  el.value?.addEventListener('show.bs.collapse', emitShow)
-  el.value?.addEventListener('shown.bs.collapse', emitShown)
+control = useOverlayControl({
+  name: () => props.name,
+  model: () => props.modelValue,
+  setModel: value => emit('update:modelValue', value),
+  plugin
 })
 
-onBeforeUnmount(() => {
-  el.value?.removeEventListener('hide.bs.collapse', emitHide)
-  el.value?.removeEventListener('hidden.bs.collapse', emitHidden)
-  el.value?.removeEventListener('show.bs.collapse', emitShow)
-  el.value?.removeEventListener('shown.bs.collapse', emitShown)
-})
-
+provide(CollapseKey, control)
+defineExpose({ show: control.show, hide: control.hide, toggle: control.toggle, getInstance: plugin.getInstance })
 </script>
+
 <template>
-  <div class="collapse" :id="name + 'Collapse'">
-    <slot/>
+  <div :id="name" ref="el" class="collapse" :class="{ show: initiallyOpen, 'collapse-horizontal': horizontal }">
+    <slot :hide="control.hide" :toggle="control.toggle" />
   </div>
 </template>

@@ -1,76 +1,33 @@
-import {createApp, App} from 'vue'
-import ToastContainer from './Components/Toast/ToastContainer.vue'
-import {useToastStore, ToastOptions} from './Composables/useToastStore'
+import type { App, Plugin } from 'vue'
+import * as components from './components'
+import { componentNames } from './component-names'
+import type { ToastOptions } from './components/Toast/toastApi'
+import type { DialogOptions } from './components/Dialog/dialogApi'
+import { bsToast } from './plugins/toast'
+import { bsDialog } from './plugins/dialog'
 
-export type { ToastOptions }
+export interface Vue3BootstrapComponentsOptions {
+  /** Prefix of the registered component names. Default `Bs` (`<Button>`). Use `''` for `<Button>`-style names. */
+  prefix?: string
+  /** Register only these components (by export name, e.g. `['Button', 'Dialog']`). Default: all. */
+  only?: string[]
+  /** Default options for the imperative toast API (`$bsToast`). */
+  toast?: ToastOptions
+  /** Default options for the promise-based dialog API (`$bsDialog`). */
+  dialog?: DialogOptions
+}
 
-let containerMounted = false
-
-function mountToastContainer() {
-    if (typeof document === 'undefined' || containerMounted) return
-
-    if (document.getElementById('bs-toast-root')) {
-        containerMounted = true
-        return
+const plugin: Plugin<[Vue3BootstrapComponentsOptions?]> = {
+  install(app: App, options: Vue3BootstrapComponentsOptions = {}) {
+    const prefix = options.prefix ?? ''
+    for (const name of componentNames) {
+      if (options.only && !options.only.includes(name)) continue
+      app.component(prefix + name, (components as Record<string, any>)[name])
     }
-
-    const rootEl = document.createElement('div')
-    rootEl.id = 'bs-toast-root'
-    document.body.appendChild(rootEl)
-
-    createApp(ToastContainer).mount(rootEl)
-    containerMounted = true
+    app.use(bsToast, options.toast)
+    app.use(bsDialog, options.dialog)
+  }
 }
 
-function show(
-    message: string,
-    type?: string,
-    title?: string,
-    meta?: string,
-    toastOptions?: ToastOptions
-) {
-    mountToastContainer()
-    return useToastStore().pushToast(message, type, title, meta, toastOptions)
-}
-
-const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'] as const
-type ToastVariant = typeof variants[number]
-
-type VariantMethod = (
-    message: string,
-    title?: string,
-    meta?: string,
-    toastOptions?: ToastOptions
-) => number
-
-export interface BsToastInstance {
-    (message: string, type?: string, title?: string, meta?: string, toastOptions?: ToastOptions): number
-    show: typeof show
-    primary: VariantMethod
-    secondary: VariantMethod
-    success: VariantMethod
-    danger: VariantMethod
-    warning: VariantMethod
-    info: VariantMethod
-    dark: VariantMethod
-    light: VariantMethod
-}
-
-const bsToast = show as BsToastInstance
-bsToast.show = show
-
-variants.forEach((variant: ToastVariant) => {
-    bsToast[variant] = (message, title, meta, toastOptions) =>
-        show(message, variant, title, meta, toastOptions)
-})
-
-export function useBsToast(): BsToastInstance {
-    return bsToast
-}
-
-export default {
-    install(app: App, options: ToastOptions = {}) {
-        useToastStore().setDefaultToastOptions(options)
-        app.config.globalProperties.$bsToast = bsToast
-    }
-}
+export default plugin
+export { plugin as Vue3BootstrapComponents }

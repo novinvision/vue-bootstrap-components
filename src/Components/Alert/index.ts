@@ -1,3 +1,5 @@
-import Alert from './Alert.vue'
-export { Alert }
-export default Alert
+import { createElementComponent } from '../../core/simple'
+
+export { default as Alert } from './Alert.vue'
+export const AlertHeading = createElementComponent('AlertHeading', 'alert-heading', 'h4')
+export const AlertLink = createElementComponent('AlertLink', 'alert-link', 'a')

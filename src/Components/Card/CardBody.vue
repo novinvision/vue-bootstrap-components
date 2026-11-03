@@ -1,9 +1,14 @@
-<script>
-export default {}
+<script setup lang="ts">
+import Tag from '../../core/Tag'
+defineOptions({ name: 'CardBody' })
+
+withDefaults(defineProps<{
+  /** Horizontal body (`.flex-row`). */
+  row?: boolean
+  as?: string
+}>(), { row: false, as: 'div' })
 </script>
 
 <template>
-    <div class="card-body">
-        <slot/>
-    </div>
+  <Tag :as="as" class="card-body" :class="{ 'flex-row': row }"><slot /></Tag>
 </template>

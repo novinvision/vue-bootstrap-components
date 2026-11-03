@@ -1,14 +1,13 @@
-import Card from './Card.vue'
-import CardBody from './CardBody.vue'
-import CardFooter from './CardFooter.vue'
-import CardHeader from './CardHeader.vue'
-import CardImgOverly from './CardImgOverly.vue'
+import { createElementComponent } from '../../core/simple'
 
-export {
-    Card,
-    CardBody,
-    CardFooter,
-    CardHeader,
-    CardImgOverly,
-}
-export default Card
+export { default as Card } from './Card.vue'
+export { default as CardBody } from './CardBody.vue'
+export { default as CardImg } from './CardImg.vue'
+export const CardHeader = createElementComponent('CardHeader', 'card-header')
+export const CardFooter = createElementComponent('CardFooter', 'card-footer')
+export const CardTitle = createElementComponent('CardTitle', 'card-title', 'h5')
+export const CardSubtitle = createElementComponent('CardSubtitle', 'card-subtitle', 'h6')
+export const CardText = createElementComponent('CardText', 'card-text', 'p')
+export const CardImgOverlay = createElementComponent('CardImgOverlay', 'card-img-overlay')
+/** Card group. Add `contains-inline` to a parent for the container query to apply. */
+export const CardGroup = createElementComponent('CardGroup', 'card-group')

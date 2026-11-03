@@ -1,58 +1,30 @@
-<script setup>
-import {ref, defineExpose, defineEmits, defineProps, onMounted, onBeforeUnmount, provide} from 'vue'
-import {useBootstrapInstance} from '../../Composables/useBootstrapInstance'
+<script setup lang="ts">
+import { computed, provide } from 'vue'
+import { uniqueId } from '../../core/utils'
 
-const props = defineProps({
-  name: {
-    type: String,
-    default: 'accordionExample'
-  }
-})
+defineOptions({ name: 'Accordion' })
 
-const el = ref(null)
+const props = withDefaults(defineProps<{
+  /** Only one item can be open at a time (native `<details name>` group). */
+  exclusive?: boolean
+  /** Compact padding and type (`.accordion-sm`). */
+  small?: boolean
+  /** Space the items apart as separate rounded cards (`.accordion-gap`). */
+  gap?: boolean
+  /** Remove outer borders and rounded corners (`.accordion-flush`). */
+  flush?: boolean
+  /** Custom group name for exclusive mode. Generated when omitted. */
+  name?: string
+}>(), { exclusive: false, small: false, gap: false, flush: false })
 
-const {getInstance} = useBootstrapInstance(el, () => import('bootstrap/js/src/collapse').then(m => m.default))
+const generated = uniqueId('accordion')
+const groupName = computed(() => (props.exclusive ? props.name ?? generated : undefined))
 
-const show = () => getInstance()?.show()
-const hide = () => getInstance()?.hide()
-const toggle = () => getInstance()?.toggle()
-
-defineExpose({show, hide, toggle})
-
-
-const emit = defineEmits([
-  'hide',
-  'hidden',
-  'show',
-  'shown',
-])
-
-const emitHide = (event) => emit('hide', event)
-const emitHidden = (event) => emit('hidden', event)
-const emitShow = (event) => emit('show', event)
-const emitShown = (event) => emit('shown', event)
-
-onMounted(() => {
-  // el.addEventListener('hide.bs.collapse', emitHide)
-  // el.value.addEventListener('hidden.bs.collapse', emitHidden)
-  // el.value.addEventListener('show.bs.collapse', emitShow)
-  // el.value.addEventListener('shown.bs.collapse', emitShown)
-})
-
-onBeforeUnmount(() => {
-  // el.value.removeEventListener('hide.bs.collapse', emitHide)
-  // el.value.removeEventListener('hidden.bs.collapse', emitHidden)
-  // el.value.removeEventListener('show.bs.collapse', emitShow)
-  // el.value.removeEventListener('shown.bs.collapse', emitShown)
-})
-
-provide({
-  'accordionName': props.name,
-})
-
+provide('bsAccordionGroup', groupName)
 </script>
+
 <template>
-  <div :id="name" ref="el" class="accordion">
-    <slot/>
+  <div class="accordion" :class="{ 'accordion-sm': small, 'accordion-gap': gap, 'accordion-flush': flush }">
+    <slot />
   </div>
 </template>

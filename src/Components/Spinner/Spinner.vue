@@ -1,25 +1,20 @@
-<script>
-export default {
-    props: {
-        type: {
-            type: String,
-            default: 'border',
-            required: false,
-        },
-        size: {
-            type: String,
-            default: 'sm',
-            required: false,
-        },
-    }
-}
+<script setup lang="ts">
+import Tag from '../../core/Tag'
+defineOptions({ name: 'Spinner' })
+
+withDefaults(defineProps<{
+  /** `border` (default), `grow` or `rotate`. */
+  type?: 'border' | 'grow' | 'rotate'
+  /** Small spinner (`.spinner-sm`). */
+  small?: boolean
+  /** Screen-reader text. */
+  label?: string
+  as?: string
+}>(), { type: 'border', small: false, label: 'Loading...', as: 'span' })
 </script>
 
 <template>
-    <i
-        class="align-middle"
-        :class="'spinner-' + this.type + ' spinner-' + this.type + '-'+this.size"
-        role="status">
-        <span class="visually-hidden">Loading...</span>
-    </i>
+  <Tag :as="as" :class="[`spinner-${type}`, { 'spinner-sm': small }]" role="status">
+    <span class="visually-hidden">{{ label }}</span>
+  </Tag>
 </template>

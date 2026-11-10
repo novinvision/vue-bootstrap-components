@@ -1,6 +1,6 @@
 {
   "name": "vue3-bootstrap-components",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Bootstrap 6 components for Vue 3 — lazy-loaded Bootstrap JavaScript, typed props, full event support, no bundled CSS.",
   "type": "module",
   "sideEffects": false,

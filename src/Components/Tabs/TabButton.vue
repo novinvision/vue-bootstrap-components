@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<{
   /** Unique tab name; links the button to the `TabPane` with the same name. */
   name: string
   disabled?: boolean
+  asLink?: boolean
 }>(), { disabled: false })
 
 const emit = defineEmits<{
@@ -43,10 +44,9 @@ function onClick(event: MouseEvent) {
 
 <template>
   <a
-    v-if="tabs?.listGroup"
+    v-if="asLink"
     :id="`tab-${name}`"
     ref="el"
-    class="list-group-item list-group-item-action"
     :class="{ active: initiallyActive, disabled }"
     :href="`#pane-${name}`"
     role="tab"
